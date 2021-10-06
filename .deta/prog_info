@@ -1,0 +1,1 @@
+{"id":"9a59cd06-b2e9-430c-b61b-3917d7b955a8","space":6814,"runtime":"nodejs12.x","name":"knox-covid","path":"czz71a","project":"b0mu95fv","account":"144798365827","region":"us-east-1","deps":["acorn@^8.5.0","cross-fetch@^3.1.4","express@^4.17.1"],"envs":null,"public":true,"log_level":"debug","cron":""}
