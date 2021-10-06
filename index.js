@@ -15,10 +15,10 @@ app.get("/data.json", async (req, res) => {
     "https://covid.knoxcountytn.gov/js/covid-charts.js"
   );
   if (script.status !== 200) {
-    res.send({ errorCode: script.status, text: await body.text() });
-    res.statusCode = 500;
+    res.status(500).json({ errorCode: script.status, text: await body.text() });
     return;
   }
+
   const ast = acorn.parse(await script.text(), { ecmaVersion: 2020 });
   const data = {};
   for (const { declarations } of ast.body.filter(
@@ -40,7 +40,7 @@ app.get("/data.json", async (req, res) => {
   }
 
   res.header("Access-Control-Allow-Origin", "*");
-  res.send(data);
+  res.json(data);
 });
 
 // export 'app'
